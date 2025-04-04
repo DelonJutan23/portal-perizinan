@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('/landingpagelec', function () {
+    return view('landingpagelec');
+});
+
 Route::get('/dashboardstudent', function () {
     return view('dashboardstudent');
 });
@@ -18,14 +22,18 @@ Route::get('/dashboardlecturer', function () {
     return view('dashboardlecturer');
 });
 
-Route::get('/reqpermit', function () {
-    return view('reqpermit');
+Route::get('/matkul', function () {
+    return view('matkul');
 });
 
 Route::get('/historylecturer', function () {
     return view('historylecturer');
 });
 
-Route::get('/detailpermissionlecturer', function () {
-    return view('detailpermissionlecturer');
+Route::get('/detailpermit', function () {
+    return view('detailpermit');
+});
+
+Route::get('/presensi', function () {
+    return view('presensi');
 });

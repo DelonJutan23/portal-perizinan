@@ -70,6 +70,24 @@
                                         </span>
                                     </div>
                                 </li>
+                                <li class="item">
+                                    <div>
+                                        <a href="#" target="_blank" class="product-title text-red text-capitalize">
+                                            [E-BISNIS] Kode absensi, 14...
+                                        </a>
+                                        <span class="float-right">
+                                            <small class="text-muted">
+                                                <i class="fas fa-clock mr-1"></i>09 Maret 2025 12:03:05
+                                            </small>
+                                        </span>
+                                        <br>Oleh:
+                                        <label class="badge badge-success">DOSEN MATAKULIAH</label>
+                                        Ir. SUMENGE TANGKAWAROUW GODION KAUNANG MT, Ph.D
+                                        <span class="product-description">
+                                            <small>146IUW23146IUW23</small>
+                                        </span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>

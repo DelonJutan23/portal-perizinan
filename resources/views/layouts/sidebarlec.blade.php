@@ -175,29 +175,6 @@
                                         </p>
                                     </a>
                                     <ul class="nav nav-treeview">
-                                        <li class="nav-item has-treeview">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Kampus Merdeka
-                                                    <i class="right fas fa-angle-left"></i>
-                                                    <span id="menu_kampus_merdeka" class="menu_kampus_merdeka badge badge-info right"></span>
-                                                </p>
-                                            </a>
-                                            <ul class="nav nav-treeview">
-                                                <li class="nav-item">
-                                                    <a href="#" class="nav-link"><i class="far fa-circle nav-icon"></i>
-                                                        <p>Pendaftaran</p>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item" data-notifid="menu_kampus_merdeka">
-                                                    <a href="#" class="nav-link"><i class="far fa-circle nav-icon"></i>
-                                                        <p>Komunikasi
-                                                            <span class="badge_notif menu_perkuliahan menu_kampus_merdeka badge badge-danger right" rel="tooltip" title="" data-original-title="Klik untuk detail notifikasi"></span>
-                                                        </p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
@@ -205,21 +182,9 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="/matkul" class="nav-link {{ request()->fullUrlIs(url('/matkul')) ? 'active' : '' }}">
                                                 <i class="far fa-circle nav-icon"></i>
-                                                <p>KRS</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Presensi</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/reqpermit" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Izin Perkuliahan</p>
+                                                <p>Mata Kuliah</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -261,29 +226,10 @@
                                                     <span class="badge_notif menu_perkuliahan badge badge-danger right" rel="tooltip" title="" data-original-title="Klik untuk detail notifikasi"></span>
                                                 </p>
                                             </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Ujian Akhir <br>Semester</p>
-                                            </a>
-                                        </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>EPOM</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>KHS</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Transkrip</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -581,13 +527,6 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-landmark"></i>
-                                        <p>
-                                            Praktik Lapangan/Magang
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item has-treeview">
                                             <a href="#" class="nav-link">
@@ -767,13 +706,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-user-graduate"></i>
-                                        <p>
-                                            Wisuda
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link"><i class="far fa-circle nav-icon"></i>

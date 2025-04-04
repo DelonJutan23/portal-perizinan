@@ -1,4 +1,5 @@
 <html style="height: auto;">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -210,13 +211,13 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="/presensi" class="nav-link {{ request()->fullUrlIs(url('/presensi')) ? 'active' : '' }}">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Presensi</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="/permitstudent" class="nav-link">
+                                            <a href="/permitstudent" class="nav-link {{ request()->fullUrlIs(url('/permitstudent')) ? 'active' : '' }}">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Izin Perkuliahan</p>
                                             </a>
@@ -1142,6 +1143,7 @@
             });
         });
     </script>
+
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WV2F029BHZ&amp;cx=c&amp;_slc=1"></script>
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-K1MTZDKJT5&amp;cx=c&amp;_slc=1"></script>
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>

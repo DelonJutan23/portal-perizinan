@@ -51,22 +51,34 @@
                         <div class="direct-chat-messages" style="height: 12em;">
                             <ul class="products-list product-list-in-card pl-2 pr-2">
                                 <li class="item">
-                                    <a href="#" target="_blank" class="product-title text-primary text-capitalize">
-                                        [PENGUMUMAN DOSEN] Rapat Akademik - 15 Maret 2025
+                                    <a href="#" target="_blank" class="product-title text-danger text-capitalize">
+                                        [RAPAT] Rapat Akademik - 15 Maret 2025
                                     </a>
                                     <span class="float-right">
                                         <small class="text-muted"><i class="fas fa-clock mr-1"></i>10 Maret 2025 15:03:05</small>
                                     </span><br>
-                                    Ditujukan kepada: <span class="badge bg-danger">SELURUH DOSEN</span>
+                                    Ditujukan kepada: <span class="badge bg-success">SELURUH DOSEN</span>
                                     <p class="product-description">
-                                        <small>Harap hadir dalam rapat akademik pada 15 Maret 2025 pukul 09:00 di Ruang Rapat Fakultas.</small>
+                                        <small>Harap hadir dalam rapat akademik pada 18 Maret 2025 pukul 09:00 di Ruang Rapat Fakultas.</small>
+                                    </p>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_blank" class="product-title text-danger text-capitalize">
+                                        [RAPAT] Rapat Akademik - 09 Maret 2025
+                                    </a>
+                                    <span class="float-right">
+                                        <small class="text-muted"><i class="fas fa-clock mr-1"></i>09 Maret 2025 09:13:05</small>
+                                    </span><br>
+                                    Ditujukan kepada: <span class="badge bg-success">SELURUH DOSEN</span>
+                                    <p class="product-description">
+                                        <small>Harap hadir dalam rapat akademik pada 10 Maret 2025 pukul 09:00 di Ruang Rapat Fakultas.</small>
                                     </p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="/" class="uppercase" target="_blank">LIHAT SEMUA</a>
+                        <a href="#" class="uppercase" target="_blank">LIHAT SEMUA</a>
                     </div>
                 </div>
             </div>
