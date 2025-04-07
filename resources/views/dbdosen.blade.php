@@ -1,4 +1,4 @@
-@extends('layouts.sidebarlec')
+@extends('layouts.sbdosen')
 
 @section('content')
 

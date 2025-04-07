@@ -1,4 +1,4 @@
-@extends('layouts.sidebarlec')
+@extends('layouts.sbdosen')
 
 @section('content')
 
@@ -27,17 +27,17 @@
             <!-- Tombol -->
             <div class="d-flex justify-content-between">
                 <div>
-                    <a href="/matkul" class="btn btn-secondary">Kembali</a>
+                    <a href="/matakuliah" class="btn btn-secondary">Kembali</a>
                 </div>
                 <div>
                     <!-- Tolak -->
-                    <a href="/matkul"
+                    <a href="/matakuliah"
                         class="btn btn-danger ms-2"
                         onclick="return confirm('Yakin ingin menolak perizinan ini?')">
                         Tolak
                     </a>
                     <!-- Setuju -->
-                    <a href="/matkul"
+                    <a href="/matakuliah"
                         class="btn btn-success"
                         onclick="return confirm('Yakin ingin menyetujui perizinan ini?')">
                         Setujui

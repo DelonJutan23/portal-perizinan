@@ -1,4 +1,4 @@
-@extends('layouts.sidebarlec')
+@extends('layouts.sbdosen')
 
 @section('content')
 
@@ -273,15 +273,15 @@
                 <td>${mahasiswa.nama}</td>
                 <td>${mahasiswa.nim}</td>
                 <td>
-                    <a href="detailpermit?id=${mahasiswa.id}" class="btn btn-primary btn-sm">Lihat Detail</a>
+                    <a href="detailperizinan?id=${mahasiswa.id}" class="btn btn-primary btn-sm">Lihat Detail</a>
                 </td>
                 <td>
-                    <a href="/matkul"
+                    <a href="/matakuliah"
                         class="btn btn-danger ms-2"
                         onclick="return confirm('Yakin ingin menolak perizinan ini?')">
                         Tolak
                     </a>
-                    <a href="/matkul"
+                    <a href="/matakuliah"
                         class="btn btn-success"
                         onclick="return confirm('Yakin ingin menyetujui perizinan ini?')">
                         Setujui

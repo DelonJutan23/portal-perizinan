@@ -2,38 +2,62 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Landing Page
+
 Route::get('/', function () {
-    return view('landingpage');
+    return view('lpmahasiswa');
 });
 
-Route::get('/landingpagelec', function () {
-    return view('landingpagelec');
+Route::get('/lpdosen', function () {
+    return view('lpdosen');
 });
 
-Route::get('/dashboardstudent', function () {
-    return view('dashboardstudent');
+Route::get('/lpadmin', function () {
+    return view('lpadmin');
 });
 
-Route::get('/permitstudent', function () {
-    return view('permitstudent');
+// Mahasiswa
+
+Route::get('/dbmahasiswa', function () {
+    return view('dbmahasiswa');
 });
 
-Route::get('/dashboardlecturer', function () {
-    return view('dashboardlecturer');
+Route::get('/izinmahasiswa', function () {
+    return view('izinmahasiswa');
 });
 
-Route::get('/matkul', function () {
-    return view('matkul');
+Route::get('/presensi', function () {
+    return view('presensi');
+});
+
+// Dosen
+
+Route::get('/dbdosen', function () {
+    return view('dbdosen');
+});
+
+Route::get('/matakuliah', function () {
+    return view('matakuliah');
 });
 
 Route::get('/historylecturer', function () {
     return view('historylecturer');
 });
 
-Route::get('/detailpermit', function () {
-    return view('detailpermit');
+Route::get('/detailperizinan', function () {
+    return view('detailperizinan');
 });
 
-Route::get('/presensi', function () {
-    return view('presensi');
+// Admin
+
+Route::get('/cruddosen', function () {
+    return view('cruddosen');
+});
+
+Route::get('/crudmahasiswa', function () {
+    return view('crudmahasiswa');
+});
+
+Route::get('/crudmatkul', function () {
+    return view('crudmatkul');
 });

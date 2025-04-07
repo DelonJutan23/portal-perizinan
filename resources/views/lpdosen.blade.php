@@ -74,7 +74,7 @@
                                     </div>
                                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                                 </div>
-                                <a href="/dashboardstudent" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</a>
+                                <a href="/dbdosen" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</a>
                                 <a href="https://inspire.unsrat.ac.id/reset_password">Lupa Password</a><br>
                                 <a href="https://inspire.unsrat.ac.id/request_reset_password">Request Reset Password</a>
                             </div>
