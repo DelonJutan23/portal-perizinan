@@ -14,28 +14,30 @@
         <p>Halaman ini digunakan untuk mengelola data mata kuliah. Super Admin dapat menambahkan, mengedit, dan menghapus mata kuliah yang tersedia dalam sistem. Dosen pengampu dapat dipilih dari daftar dosen yang sudah terdaftar.</p>
     </div>
 
-    <!-- CREATE Button -->
+    <!-- Create -->
     <button class="btn btn-success mb-3" data-toggle="modal" data-target="#modalAddMatkul">
         <i class="fas fa-plus"></i> Tambah Mata Kuliah
     </button>
 
-    <!-- Table READ -->
-    <table class="table table-bordered bg-light" style="border: 1px solid black;">
-        <thead>
-            <tr>
-                <th style="border: 1px solid black;">#</th>
-                <th style="border: 1px solid black;">Nama Mata Kuliah</th>
-                <th style="border: 1px solid black;">Kode</th>
-                <th style="border: 1px solid black;">Dosen Pengampu</th>
-                <th style="border: 1px solid black;">Aksi</th>
-            </tr>
-        </thead>
-        <tbody id="matkulTableBody">
-            <!-- Mata Kuliah -->
-        </tbody>
-    </table>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered bg-light" style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black;">#</th>
+                    <th style="border: 1px solid black;">Nama Mata Kuliah</th>
+                    <th style="border: 1px solid black;">Kode</th>
+                    <th style="border: 1px solid black;">Dosen Pengampu</th>
+                    <th style="border: 1px solid black;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="matkulTableBody">
+                <!-- Mata Kuliah (JavaScript) -->
+            </tbody>
+        </table>
+    </div>
 
-    <!-- Pop Up CREATE -->
+    <!-- Modal create -->
     <div class="modal fade" id="modalAddMatkul" tabindex="-1" aria-labelledby="modalAddMatkulLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formAddMatkul">
@@ -62,7 +64,7 @@
         </div>
     </div>
 
-    <!-- Pop Up UPDATE -->
+    <!-- Modal update -->
     <div class="modal fade" id="modalEditMatkul" tabindex="-1" aria-labelledby="modalEditMatkulLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formEditMatkul">
@@ -76,7 +78,7 @@
                         <input type="text" class="form-control mb-2" id="editNamaMatkul" required>
                         <input type="text" class="form-control mb-2" id="editKodeMatkul" required>
                         <input list="dosenList" class="form-control mb-2" placeholder="Dosen Pengampu" id="editDosenPengampu" required>
-                            <datalist id="dosenList">
+                        <datalist id="dosenList">
                             <option value="Dosen A">
                             <option value="Dosen B">
                             <option value="Dosen C">
@@ -91,9 +93,9 @@
         </div>
     </div>
 
-    <!-- Script CRUD Mata Kuliah -->
+    <!-- Script CRUD -->
     <script>
-        // Data dummy dosen untuk pilihan
+        // Data dummy dosen
         const dosenList = [{
                 id_dosen: "D001",
                 nama_dosen: "Dr. Ahmad Fauzi"
@@ -104,7 +106,7 @@
             }
         ];
 
-        // Data Mata Kuliah Dummy
+        // Data dummy mata kuliah
         let matkulList = [{
             id_matkul: 1,
             nama_matkul: "Pemrograman Web",
@@ -138,7 +140,7 @@
             <td style="border: 1px solid black;">${m.kode_matkul}</td>
             <td style="border: 1px solid black;">${getDosenNameById(m.dosen_pengampu)}</td>
             <td style="border: 1px solid black;">
-                <button class="btn btn-sm btn-warning" onclick="openEditMatkul(${index})"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-sm btn-warning mb-2 mb-md-0 mr-md-2" onclick="openEditMatkul(${index})"><i class="fas fa-edit"></i></button>
                 <button class="btn btn-sm btn-danger" onclick="deleteMatkul(${index})"><i class="fas fa-trash"></i></button>
             </td>
         </tr>`;
@@ -147,7 +149,7 @@
         }
 
 
-        // CREATE
+        // Create
         document.getElementById("formAddMatkul").addEventListener("submit", function(e) {
             e.preventDefault();
             const newMatkul = {
@@ -162,7 +164,7 @@
             this.reset();
         });
 
-        // OPEN EDIT
+        // Edit
         function openEditMatkul(index) {
             const m = matkulList[index];
             document.getElementById("editIndexMatkul").value = index;
@@ -172,7 +174,7 @@
             $('#modalEditMatkul').modal('show');
         }
 
-        // UPDATE
+        // Update
         document.getElementById("formEditMatkul").addEventListener("submit", function(e) {
             e.preventDefault();
             const i = document.getElementById("editIndexMatkul").value;
@@ -186,7 +188,7 @@
             renderMatkul();
         });
 
-        // DELETE
+        // Delete
         function deleteMatkul(index) {
             if (confirm("Yakin ingin menghapus mata kuliah ini?")) {
                 matkulList.splice(index, 1);

@@ -14,29 +14,31 @@
         <p>Halaman ini digunakan oleh Super Admin untuk mengelola akun dosen. Anda dapat menambahkan, mengubah, dan menghapus data dosen.</p>
     </div>
 
-    <!-- CREATE Button -->
+    <!-- Create -->
     <button class="btn btn-success mb-3" data-toggle="modal" data-target="#modalAddDosen">
         <i class="fas fa-plus"></i> Tambah Dosen
     </button>
 
     <!-- Table -->
-    <table class="table table-bordered bg-light" style="border: 1px solid black;">
-        <thead>
-            <tr>
-                <th style="border: 1px solid black;">#</th>
-                <th style="border: 1px solid black;">NIP</th>
-                <th style="border: 1px solid black;">Nama Dosen</th>
-                <th style="border: 1px solid black;">Email</th>
-                <th style="border: 1px solid black;">Jabatan</th>
-                <th style="border: 1px solid black;">Aksi</th>
-            </tr>
-        </thead>
-        <tbody id="dosenTableBody">
-            <!-- Dosen list rendered here -->
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered bg-light" style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black;">#</th>
+                    <th style="border: 1px solid black;">NIP</th>
+                    <th style="border: 1px solid black;">Nama Dosen</th>
+                    <th style="border: 1px solid black;">Email</th>
+                    <th style="border: 1px solid black;">Jabatan</th>
+                    <th style="border: 1px solid black;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="dosenTableBody">
+                <!-- Dosen (JavaScript) -->
+            </tbody>
+        </table>
+    </div>
 
-    <!-- Modal: Tambah Dosen -->
+    <!-- Modal create -->
     <div class="modal fade" id="modalAddDosen" tabindex="-1" aria-labelledby="modalAddDosenLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formAddDosen">
@@ -60,7 +62,7 @@
         </div>
     </div>
 
-    <!-- Modal: Edit Dosen -->
+    <!-- Modal update -->
     <div class="modal fade" id="modalEditDosen" tabindex="-1" aria-labelledby="modalEditDosenLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formEditDosen">
@@ -85,17 +87,15 @@
         </div>
     </div>
 
-    <!-- JS CRUD Dosen -->
+    <!-- Script CRUD -->
     <script>
-        let dosenList = [
-            {
-                nip: "19800816",
-                nama: "Dr. Andi M.",
-                email: "andi@univ.ac.id",
-                password: "rahasia123",
-                jabatan: "Sekretaris Jurusan"
-            }
-        ];
+        let dosenList = [{
+            nip: "19800816",
+            nama: "Dr. Andi M.",
+            email: "andi@univ.ac.id",
+            password: "rahasia123",
+            jabatan: "Sekretaris Jurusan"
+        }];
 
         function renderDosen() {
             let html = "";
@@ -108,7 +108,7 @@
                         <td style="border: 1px solid black;">${dosen.email}</td>
                         <td style="border: 1px solid black;">${dosen.jabatan || '-'}</td>
                         <td style="border: 1px solid black;">
-                            <button class="btn btn-sm btn-warning" onclick="openEditDosen(${index})"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-warning mb-2 mb-md-0 mr-md-2" onclick="openEditDosen(${index})"><i class="fas fa-edit"></i></button>
                             <button class="btn btn-sm btn-danger" onclick="deleteDosen(${index})"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
@@ -117,7 +117,7 @@
             document.getElementById("dosenTableBody").innerHTML = html;
         }
 
-        // CREATE
+        // Create
         document.getElementById("formAddDosen").addEventListener("submit", function(e) {
             e.preventDefault();
             const newDosen = {
@@ -133,7 +133,7 @@
             this.reset();
         });
 
-        // READ + OPEN Modal EDIT
+        // Edit
         function openEditDosen(index) {
             const d = dosenList[index];
             document.getElementById("editIndex").value = index;
@@ -145,7 +145,7 @@
             $('#modalEditDosen').modal('show');
         }
 
-        // UPDATE
+        // Update
         document.getElementById("formEditDosen").addEventListener("submit", function(e) {
             e.preventDefault();
             const i = document.getElementById("editIndex").value;
@@ -160,7 +160,7 @@
             renderDosen();
         });
 
-        // DELETE
+        // Delete
         function deleteDosen(index) {
             if (confirm("Yakin ingin menghapus data dosen ini?")) {
                 dosenList.splice(index, 1);
@@ -168,8 +168,8 @@
             }
         }
 
-        // Initial render
+        // Init
         renderDosen();
     </script>
 
-@endsection
+    @endsection

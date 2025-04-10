@@ -14,30 +14,32 @@
         <p>Halaman ini digunakan untuk mengelola data akun mahasiswa yang terdaftar dalam sistem. Super Admin dapat menambahkan mahasiswa baru, mengubah data mahasiswa, atau menghapus akun mahasiswa yang tidak aktif.</p>
     </div>
 
-    <!-- CREATE Button -->
+    <!-- Create -->
     <button class="btn btn-success mb-3" data-toggle="modal" data-target="#modalAddMahasiswa">
         <i class="fas fa-plus"></i> Tambah Mahasiswa
     </button>
 
-    <!-- Table READ -->
-    <table class="table table-bordered bg-light" style="border: 1px solid black;">
-        <thead>
-            <tr>
-                <th style="border: 1px solid black;">#</th>
-                <th style="border: 1px solid black;">NIM</th>
-                <th style="border: 1px solid black;">Nama Mahasiswa</th>
-                <th style="border: 1px solid black;">Email</th>
-                <th style="border: 1px solid black;">Program Studi</th>
-                <th style="border: 1px solid black;">Angkatan</th>
-                <th style="border: 1px solid black;">Aksi</th>
-            </tr>
-        </thead>
-        <tbody id="mahasiswaTableBody">
-            <!-- Data Mahasiswa -->
-        </tbody>
-    </table>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered bg-light" style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black;">#</th>
+                    <th style="border: 1px solid black;">NIM</th>
+                    <th style="border: 1px solid black;">Nama Mahasiswa</th>
+                    <th style="border: 1px solid black;">Email</th>
+                    <th style="border: 1px solid black;">Program Studi</th>
+                    <th style="border: 1px solid black;">Angkatan</th>
+                    <th style="border: 1px solid black;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="mahasiswaTableBody">
+                <!-- Data Mahasiswa (JavaScript) -->
+            </tbody>
+        </table>
+    </div>
 
-    <!-- Pop Up CREATE -->
+    <!-- Modal create -->
     <div class="modal fade" id="modalAddMahasiswa" tabindex="-1" aria-labelledby="modalAddMahasiswaLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formAddMahasiswa">
@@ -62,7 +64,7 @@
         </div>
     </div>
 
-    <!-- Pop Up UPDATE -->
+    <!-- Modal update -->
     <div class="modal fade" id="modalEditMahasiswa" tabindex="-1" aria-labelledby="modalEditMahasiswaLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form id="formEditMahasiswa">
@@ -88,7 +90,7 @@
         </div>
     </div>
 
-    <!-- Script CRUD Mahasiswa -->
+    <!-- Script CRUD -->
     <script>
         let mahasiswaList = [{
             id_mahasiswa: "210001001",
@@ -111,7 +113,7 @@
                     <td style="border: 1px solid black;">${mhs.prodi || '-'}</td>
                     <td style="border: 1px solid black;">${mhs.angkatan || '-'}</td>
                     <td style="border: 1px solid black;">
-                        <button class="btn btn-sm btn-warning" onclick="openEditMahasiswa(${index})"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-warning mb-2 mb-md-0 mr-md-2" onclick="openEditMahasiswa(${index})"><i class="fas fa-edit"></i></button>
                         <button class="btn btn-sm btn-danger" onclick="deleteMahasiswa(${index})"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>`;
@@ -119,7 +121,7 @@
             document.getElementById("mahasiswaTableBody").innerHTML = html;
         }
 
-        // CREATE
+        // Create
         document.getElementById("formAddMahasiswa").addEventListener("submit", function(e) {
             e.preventDefault();
             const newMahasiswa = {
@@ -136,7 +138,7 @@
             this.reset();
         });
 
-        // OPEN EDIT MODAL
+        // Edit
         function openEditMahasiswa(index) {
             const m = mahasiswaList[index];
             document.getElementById("editIndexMahasiswa").value = index;
@@ -149,7 +151,7 @@
             $('#modalEditMahasiswa').modal('show');
         }
 
-        // UPDATE
+        // Update
         document.getElementById("formEditMahasiswa").addEventListener("submit", function(e) {
             e.preventDefault();
             const i = document.getElementById("editIndexMahasiswa").value;
@@ -165,7 +167,7 @@
             renderMahasiswa();
         });
 
-        // DELETE
+        // Delete
         function deleteMahasiswa(index) {
             if (confirm("Yakin ingin menghapus mahasiswa ini?")) {
                 mahasiswaList.splice(index, 1);
@@ -177,4 +179,4 @@
         renderMahasiswa();
     </script>
 
-@endsection
+    @endsection

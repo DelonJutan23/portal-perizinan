@@ -19,29 +19,31 @@
             <div class="col-lg-12">
                 <div class="card p-4 mt-2" style="background-color: #ffffff;">
                     <h3 class="fw-bold text-center mb-4">Isi Data Formulir Perizinan</h3>
+
+                    <!-- Formulir pengajuan izin -->
                     <form id="permissionForm" onsubmit="return validateForm()">
 
-                        <!-- NIM -->
+                        <!-- Input NIM -->
                         <div class="mb-3">
                             <label for="nim" class="form-label">NIM</label>
                             <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM Anda" maxlength="12" required oninput="validateNIM(this)">
                             <small id="nimWarning" class="text-danger" style="display: none;">Hanya angka yang diperbolehkan.</small>
                         </div>
 
-                        <!-- Nama -->
+                        <!-- Input Nama -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
                             <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda" required oninput="validateName(this)">
                             <small id="nameWarning" class="text-danger" style="display: none;">Hanya huruf dan spasi yang diperbolehkan.</small>
                         </div>
 
-                        <!-- Tanggal Izin -->
+                        <!-- Input tanggal izin -->
                         <div class="mb-3">
                             <label for="permit-day" class="form-label">Hari Izin</label>
                             <input type="date" class="form-control" id="permit-day" min="" required>
                         </div>
 
-                        <!-- Mata Kuliah -->
+                        <!-- Mata kuliah -->
                         <div class="mb-3 position-relative">
                             <label for="course" class="form-label">Mata Kuliah</label>
                             <div class="position-relative">
@@ -59,21 +61,21 @@
                             </div>
                         </div>
 
-                        <!-- Alasan Izin -->
+                        <!-- Alasan izin -->
                         <div class="mb-3">
                             <label for="reason" class="form-label">Alasan Izin</label>
                             <textarea class="form-control" id="reason" rows="3" required placeholder="Masukkan alasan Anda di sini..."></textarea>
                         </div>
 
-                        <!-- Unggah Berkas Pendukung -->
+                        <!-- File pendukung -->
                         <div class="mb-4">
                             <label for="supporting-file" class="form-label">Unggah Berkas Pendukung</label>
                             <input type="file" class="form-control" id="supporting-file" style="padding: 8px; height: 45px;">
                         </div>
 
-                        <!-- Tombol Kirim -->
+                        <!-- Tombol kirim -->
                         <div class="d-flex justify-content-end mt-3">
-                            <button type="button" class="btn btn-dark py-2 px-4 fw-bold" onclick="showConfirmation(event)">Kirim Permohonan</button>
+                            <button type="submit" class="btn btn-dark py-2 px-4 fw-bold">Kirim Permohonan</button>
                         </div>
                     </form>
                 </div>
@@ -81,17 +83,19 @@
         </div>
     </div>
 
-    <!-- Pop-Up Konfirmasi Pengiriman -->
+    <!-- Modal konfirmasi pengiriman -->
     <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title fw-bold">Konfirmasi Pengiriman</h5>
+                    <button type="button" class="close text-dark border-0 bg-transparent" data-dismiss="modal" aria-label="Tutup" style="font-size: 1.5rem; line-height: 1;">
+                        &times;
+                    </button>
                 </div>
                 <div class="modal-body text-center">
                     <p class="fs-5">
-                        Apakah Anda yakin ingin mengirim permohonan izin atas nama <span id="studentName" class="fw-bold"></span>
-                        untuk mata kuliah <span id="courseName" class="fw-bold"></span> pada tanggal <span id="permitDate" class="fw-bold"></span>?
+                        Apakah Anda yakin ingin mengirim permohonan izin untuk mata kuliah <span id="courseName" class="fw-bold"></span> pada tanggal <span id="permitDate" class="fw-bold"></span>?
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -102,7 +106,7 @@
         </div>
     </div>
 
-    <!-- Script Pop Up Konfirmasi -->
+    <!-- Script untuk konfirmasi -->
     <script>
         let confirmModal;
 
@@ -113,7 +117,6 @@
             let course = document.getElementById("course").options[document.getElementById("course").selectedIndex].text;
             let permitDate = document.getElementById("permit-day").value;
 
-            document.getElementById('studentName').innerText = name;
             document.getElementById('courseName').innerText = course;
             document.getElementById('permitDate').innerText = permitDate;
 
@@ -130,7 +133,7 @@
         };
     </script>
 
-    <!-- Script NIM -->
+    <!-- Script validasi NIM hanya angka -->
     <script>
         function validateNIM(input) {
             let warning = document.getElementById("nimWarning");
@@ -140,7 +143,7 @@
         }
     </script>
 
-    <!-- Script Name -->
+    <!-- Script validasi Nama hanya huruf dan spasi -->
     <script>
         function validateName(input) {
             let warning = document.getElementById("nameWarning");
@@ -150,14 +153,58 @@
         }
     </script>
 
-    <!-- Script Tanggal Izin -->
+    <!-- Mengatur tanggal (tidak bisa pilih tanggal kemarin) -->
     <script>
         const today = new Date();
         const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0'); // bulan dari 0
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
         const formattedToday = `${yyyy}-${mm}-${dd}`;
         document.getElementById('permit-day').setAttribute('min', formattedToday);
+    </script>
+
+    <!-- Validasi semua input sebelum submit -->
+    <script>
+        function validateForm() {
+            const nim = document.getElementById("nim");
+            const name = document.getElementById("name");
+            const permitDate = document.getElementById("permit-day");
+            const course = document.getElementById("course");
+            const reason = document.getElementById("reason");
+
+            if (!nim.value.trim()) {
+                alert("Mohon isi NIM terlebih dahulu.");
+                nim.focus();
+                return false;
+            }
+
+            if (!name.value.trim()) {
+                alert("Mohon isi Nama terlebih dahulu.");
+                name.focus();
+                return false;
+            }
+
+            if (!permitDate.value) {
+                alert("Mohon pilih Tanggal Izin.");
+                permitDate.focus();
+                return false;
+            }
+
+            if (!course.value) {
+                alert("Mohon pilih Mata Kuliah.");
+                course.focus();
+                return false;
+            }
+
+            if (!reason.value.trim()) {
+                alert("Mohon isi Alasan Izin.");
+                reason.focus();
+                return false;
+            }
+
+            showConfirmation(event);
+            return false;
+        }
     </script>
 
     @endsection

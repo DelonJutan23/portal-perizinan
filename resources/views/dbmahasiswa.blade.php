@@ -20,7 +20,7 @@
                     <p class="lead">
                         Selamat datang di <span style="font-weight: bold; font-size: 16pt;">PORTAL INSPIRE</span> Universitas Sam Ratulangi.
                     </p>
-                    <button class="btn btn-primary" style="color: white">
+                    <button class="btn btn-primary mb-2 mb-md-0" style="color: white">
                         <i class="fas fa-globe"></i> Website Unsrat
                     </button>
                     <button class="btn btn-primary" style="color: white;">
@@ -29,6 +29,7 @@
                 </div>
             </div>
 
+            <!-- Informasi studi mahasiswa -->
             <div class="col-md-6">
                 <div class="alert alert-danger alert-dismissible text-center">
                     <h5><i class="icon fas fa-exclamation-triangle"></i> Perhatian !</h5>
@@ -44,6 +45,7 @@
                 </div>
             </div>
 
+            <!-- Pengumuman -->
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-red text-center">
@@ -52,6 +54,7 @@
                     <div class="card-body p-0">
                         <div class="direct-chat-messages" style="height: 12em;">
                             <ul class="products-list product-list-in-card pl-2 pr-2">
+                                <!-- List pengumuman -->
                                 <li class="item">
                                     <div>
                                         <a href="#" target="_blank" class="product-title text-red text-capitalize">
@@ -93,11 +96,13 @@
                     </div>
                     <div class="card-footer text-center">
                         <a href="/" class="uppercase" target="_blank">LIHAT SEMUA</a>
+                        <!-- Tombol pengumuman lengkap -->
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Integrasi Google Calendar untuk sinkronisasi jadwal -->
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-warning text-center">
@@ -112,6 +117,7 @@
         </div>
     </div>
 
+    <!-- Tombol informasi menu -->
     <div class="box-body">
         <div class="row">
             <div class="col-12 text-right">
@@ -123,8 +129,10 @@
     </div>
 </div>
 
+<!-- Overlay sidebar jika terbuka -->
 <div id="sidebar-overlay"></div>
 
+<!-- Tombol kembali -->
 <a id="back-to-top" href="#" class="btn btn-danger back-to-top" role="button" style="display: none;">
     <i class="fas fa-chevron-up"></i>
 </a>
@@ -142,6 +150,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row text-center">
+                        <!-- Daftar fitur-fitur utama portal INSPIRE -->
                         <a class="btn btn-app" href="/"><i class="fa fa-home"></i> Beranda</a>
                         <a class="btn btn-app" href="/"><i class="fas fa-user"></i> Biodata</a>
                         <a class="btn btn-app" href="/"><i class="fas fa-clock"></i> Jadwal Kuliah</a>
@@ -165,6 +174,7 @@
 </div>
 
 <script>
+    // Interaksi untuk menu sidebar collapse
     $(document).ready(function() {
         $('.nav-item.has-treeview > a').click(function(e) {
             e.preventDefault();

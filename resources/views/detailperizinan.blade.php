@@ -2,22 +2,22 @@
 
 @section('content')
 
-<div class="content">
-    <div class="d-flex">
-        <div class="content mt-3 ml-2 mr-2" style="background: white; padding: 20px; border-radius: 10px;">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="content mt-3 ml-2 mr-2 bg-white p-3 p-md-4 rounded">
 
-            <!-- Detail Perizinan -->
+            <!-- Detail perizinan -->
             <h4 class="text-center mb-4"><strong>Detail Perizinan</strong></h4>
             <p><strong>NIM:</strong> 220211060001</p>
             <p><strong>Nama:</strong> Cindy Aurellia Indiarto</p>
             <p><strong>Mata Kuliah:</strong> Keamanan Siber</p>
             <p><strong>Tanggal Izin:</strong> 12 Maret 2024</p>
 
-            <!-- Alasan Perizinan -->
+            <!-- Alasan perizinan -->
             <p><strong>Alasan Perizinan:</strong></p>
             <p class="text-muted">Saya merasa kurang sehat karena demam tinggi, sehingga tidak dapat menghadiri kelas pada tanggal yang telah dijadwalkan. Saya telah disarankan untuk beristirahat dan mengonsumsi obat agar segera pulih.</p>
 
-            <!-- Berkas Pendukung -->
+            <!-- Berkas pendukung -->
             <div class="mb-5">
                 <a href="{{ asset('storage/supporting_files/example.pdf') }}" target="_blank" class="btn btn-outline-primary w-100 border-1">
                     Lihat Berkas Pendukung

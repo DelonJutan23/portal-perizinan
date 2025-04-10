@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="https://inspire.unsrat.ac.id/resources/adminlte3/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://inspire.unsrat.ac.id/resources/adminlte3/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="https://inspire.unsrat.ac.id/resources/adminlte3/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-
     <title>@yield('title', 'Sistem Perizinan')</title>
 </head>
 

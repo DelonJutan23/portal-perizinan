@@ -8,15 +8,19 @@
         <h1>Beranda</h1>
     </div>
 </div>
+
 <input type="hidden" id="user_session" value="220211060071">
+
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+
+                <!-- Jumbotron: sapaan awal kepada user dan shortcut tombol penting -->
                 <div class="jumbotron bg-white mb-3">
                     <h2 class="display-6">Halo, CLARK!</h2>
                     <p class="lead">Selamat datang di <strong style="font-size: 16pt;">PORTAL INSPIRE</strong> Universitas Sam Ratulangi.</p>
-                    <button class="btn btn-primary" style="color: white">
+                    <button class="btn btn-primary mb-2 mb-md-0" style="color: white">
                         <i class="fas fa-globe"></i> Website Unsrat
                     </button>
                     <button class="btn btn-primary" style="color: white">
@@ -25,7 +29,7 @@
                 </div>
             </div>
 
-            <!-- Informasi Dosen -->
+            <!-- Informasi status dosen -->
             <div class="col-md-6">
                 <div class="alert alert-danger text-center">
                     <h5><i class="icon fas fa-exclamation-triangle"></i> Perhatian!</h5>
@@ -35,6 +39,7 @@
                     <label>MATA KULIAH DIAJAR :</label> E-Bisnis, Sistem Informasi, Manajemen Data <br>
                     <label>STATUS PDDIKTI :</label> AKTIF <br>
                 </div>
+
                 <div class="callout callout-info">
                     <label>JUMLAH SKS DIAJAR</label> : 12 SKS <br>
                     <label>MAHASISWA BIMBINGAN</label> : 15 Mahasiswa <br>
@@ -49,6 +54,7 @@
                     </div>
                     <div class="card-body p-0">
                         <div class="direct-chat-messages" style="height: 12em;">
+                            <!-- List pengumuman -->
                             <ul class="products-list product-list-in-card pl-2 pr-2">
                                 <li class="item">
                                     <a href="#" target="_blank" class="product-title text-danger text-capitalize">
@@ -84,7 +90,7 @@
             </div>
         </div>
 
-        <!-- Google Calendar Integration -->
+        <!-- Integrasi Google Calendar untuk sinkronisasi jadwal -->
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-warning text-center">
@@ -98,7 +104,7 @@
         </div>
     </div>
 
-    <!-- Informasi Menu -->
+    <!-- Tombol informasi menu -->
     <div class="box-body">
         <div class="row">
             <div class="col-12">
@@ -110,7 +116,7 @@
     </div>
 </div>
 
-<!-- Button Scroll on Top -->
+<!-- Tombol kembali -->
 <a id="back-to-top" href="#" class="btn btn-danger back-to-top" role="button" style="display: none;">
     <i class="fas fa-chevron-up"></i>
 </a>
@@ -126,6 +132,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <!-- Daftar fitur-fitur utama portal INSPIRE -->
                 <div class="container-fluid text-center">
                     <a class="btn btn-app" href="/">
                         <i class="fa fa-home"></i> Beranda
