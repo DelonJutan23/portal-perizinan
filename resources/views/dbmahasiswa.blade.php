@@ -163,9 +163,9 @@
                         <a class="btn btn-app" href="/"><i class="fas fa-money-bill-alt"></i> Billing</a>
                         <a class="btn btn-app" href="/"><i class="fas fa-book-reader"></i> Beasiswa</a>
                         <a class="btn btn-app" href="/"><i class="fas fa-user-graduate"></i> Wisuda</a>
-                        <a class="btn btn-app" id="btn-app-logout" data-toggle="modal" data-target="#mdl-logout">
+                        <<a href="/lpmahasiswa" class="nav-link">
                             <i class="fas fa-power-off"></i> Keluar
-                        </a>
+                            </a>
                     </div>
                 </div>
             </div>

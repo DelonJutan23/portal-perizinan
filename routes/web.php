@@ -1,12 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
 
 // Landing Page
-
-Route::get('/', function () {
-    return view('lpmahasiswa');
-});
+Route::get('/', [MahasiswaController::class, 'showLogin']);
+Route::post('/loginmahasiswa', [MahasiswaController::class, 'login']);
 
 Route::get('/lpdosen', function () {
     return view('lpdosen');
@@ -17,7 +16,6 @@ Route::get('/lpadmin', function () {
 });
 
 // Mahasiswa
-
 Route::get('/dbmahasiswa', function () {
     return view('dbmahasiswa');
 });
@@ -31,7 +29,6 @@ Route::get('/presensi', function () {
 });
 
 // Dosen
-
 Route::get('/dbdosen', function () {
     return view('dbdosen');
 });
@@ -49,7 +46,6 @@ Route::get('/detailperizinan', function () {
 });
 
 // Admin
-
 Route::get('/cruddosen', function () {
     return view('cruddosen');
 });

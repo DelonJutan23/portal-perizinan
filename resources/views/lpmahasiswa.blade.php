@@ -57,7 +57,8 @@
             <div class="container">
                 <div class="col-md-4 ml-auto mr-auto">
                     <div class="card card-login card-plain mt-5">
-                        <form action="/login/autentikasi" id="login-form" method="post">
+                        <form action="/loginmahasiswa" id="login-form" method="POST">
+                            @csrf
                             <div class="text-center">
                                 <img src="https://inspire.unsrat.ac.id/resources/img/inspire-logo-hd.png" title="Arti INSPIRE">
                             </div>
@@ -74,11 +75,16 @@
                                     </div>
                                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                                 </div>
-                                <a href="/dbmahasiswa" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</a>
+                                <button type="submit" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</button>
                                 <a href="https://inspire.unsrat.ac.id/reset_password">Lupa Password</a><br>
                                 <a href="https://inspire.unsrat.ac.id/request_reset_password">Request Reset Password</a>
                             </div>
                         </form>
+                        @if(session('error'))
+                        <div class="alert mt-3">
+                            {{ session('error') }}
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
