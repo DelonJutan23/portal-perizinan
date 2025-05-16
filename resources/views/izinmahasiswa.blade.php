@@ -14,63 +14,73 @@
         <p>Halaman ini digunakan untuk mengajukan izin perkuliahan apabila Anda tidak dapat hadir pada perkuliahan karena alasan tertentu.</p>
     </div>
 
+    <!-- Tampilkan pesan sukses -->
+    @if (session('success'))
+    <div style="background-color: #d4edda; padding: 10px; border: 1px solid #c3e6cb; color: #155724; border-radius: 4px; margin-bottom: 20px;">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    <!-- Tampilkan error validasi -->
+    @if ($errors->any())
+    <div style="background-color: #f8d7da; padding: 10px; border: 1px solid #f5c6cb; color: #721c24; border-radius: 4px; margin-bottom: 20px;">
+        <ul style="margin: 0; padding-left: 20px;">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <div class="content">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card p-4 mt-2" style="background-color: #ffffff;">
                     <h3 class="fw-bold text-center mb-4">Isi Data Formulir Perizinan</h3>
-
-                    <!-- Formulir pengajuan izin -->
-                    <form id="permissionForm" onsubmit="return validateForm()">
+                    <form id="permissionForm" method="POST" action="{{ url('/izinmahasiswa') }}" enctype="multipart/form-data" onsubmit="return validateForm(event)">
+                        @csrf
 
                         <!-- Input NIM -->
                         <div class="mb-3">
                             <label for="nim" class="form-label">NIM</label>
-                            <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM Anda" maxlength="12" required oninput="validateNIM(this)">
-                            <small id="nimWarning" class="text-danger" style="display: none;">Hanya angka yang diperbolehkan.</small>
+                            <input type="text" class="form-control" id="nim" name="nim"
+                                value="{{ Auth::user()->id_user }}" readonly>
                         </div>
 
                         <!-- Input Nama -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda" required oninput="validateName(this)">
-                            <small id="nameWarning" class="text-danger" style="display: none;">Hanya huruf dan spasi yang diperbolehkan.</small>
+                            <input type="text" class="form-control" id="name" name="name"
+                                value="{{ Auth::user()->nama }}" readonly>
                         </div>
 
                         <!-- Input tanggal izin -->
                         <div class="mb-3">
                             <label for="permit-day" class="form-label">Hari Izin</label>
-                            <input type="date" class="form-control" id="permit-day" min="" required>
+                            <input type="date" class="form-control" id="permit-day" name="permit_day" min="" required>
                         </div>
 
                         <!-- Mata kuliah -->
                         <div class="mb-3 position-relative">
                             <label for="course" class="form-label">Mata Kuliah</label>
-                            <div class="position-relative">
-                                <select class="form-control form-select"
-                                    id="course"
-                                    required
-                                    style="background-image: none !important; box-shadow: none !important;-webkit-appearance: none; -moz-appearance: none; appearance: none; background-color: transparent; padding-right: 35px;">
-                                    <option value="" disabled selected>Pilih mata kuliah</option>
-                                    <option value="keamanan siber">Keamanan Siber</option>
-                                    <option value="big data">Big Data</option>
-                                    <option value="web framework">Pengembangan Aplikasi Web Berbasis Framework</option>
-                                </select>
-                                <i class="fas fa-chevron-down position-absolute text-muted"
-                                    style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-                            </div>
+                            <select class="form-control form-select" id="course" name="course" required>
+                                <option value="" disabled selected>Pilih mata kuliah</option>
+                                <option value="keamanan siber">Keamanan Siber</option>
+                                <option value="big data">Big Data</option>
+                                <option value="web framework">Pengembangan Aplikasi Web Berbasis Framework</option>
+                            </select>
                         </div>
 
                         <!-- Alasan izin -->
                         <div class="mb-3">
                             <label for="reason" class="form-label">Alasan Izin</label>
-                            <textarea class="form-control" id="reason" rows="3" required placeholder="Masukkan alasan Anda di sini..."></textarea>
+                            <textarea class="form-control" id="reason" name="reason" rows="3" required placeholder="Masukkan alasan Anda di sini..."></textarea>
                         </div>
 
                         <!-- File pendukung -->
                         <div class="mb-4">
                             <label for="supporting-file" class="form-label">Unggah Berkas Pendukung</label>
-                            <input type="file" class="form-control" id="supporting-file" style="padding: 8px; height: 45px;">
+                            <input type="file" class="form-control" id="supporting-file" name="supporting_file">
                         </div>
 
                         <!-- Tombol kirim -->

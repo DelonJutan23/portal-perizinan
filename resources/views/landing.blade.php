@@ -57,7 +57,8 @@
             <div class="container">
                 <div class="col-md-4 ml-auto mr-auto">
                     <div class="card card-login card-plain mt-5">
-                        <form action="/login/autentikasi" id="login-form" method="post">
+                        <form action="{{ route('login') }}" id="login-form" method="POST">
+                            @csrf
                             <div class="text-center">
                                 <img src="https://inspire.unsrat.ac.id/resources/img/inspire-logo-hd.png" title="Arti INSPIRE">
                             </div>
@@ -66,7 +67,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
                                     </div>
-                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                    <input type="text" name="id_user" class="form-control" placeholder="Username" required>
                                 </div>
                                 <div class="input-group no-border input-lg">
                                     <div class="input-group-prepend">
@@ -74,10 +75,13 @@
                                     </div>
                                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                                 </div>
-                                <a href="/dbdosen" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</a>
+                                <button type="submit" class="btn btn-danger btn-round btn-lg btn-block mt-4">LOGIN</button>
                                 <a href="https://inspire.unsrat.ac.id/reset_password">Lupa Password</a><br>
                                 <a href="https://inspire.unsrat.ac.id/request_reset_password">Request Reset Password</a>
                             </div>
+                            @if($errors->any())
+                            <p>{{ $errors->first() }}</p>
+                            @endif
                         </form>
                     </div>
                 </div>

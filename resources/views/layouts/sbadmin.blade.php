@@ -58,13 +58,7 @@
                                 <li class="nav-item">
                                     <a href="/cruddosen" class="nav-link" id="nav-dosen">
                                         <i class="nav-icon fas fa-user"></i>
-                                        <p>Dosen</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/crudmahasiswa" class="nav-link" id="nav-mahasiswa">
-                                        <i class="nav-icon fas fa-users"></i>
-                                        <p>Mahasiswa</p>
+                                        <p>Pengguna</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

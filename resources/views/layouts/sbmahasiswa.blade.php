@@ -100,7 +100,6 @@
                             </a>
                         </div>
                     </li>
-
                 </ul>
             </nav>
 
@@ -1143,6 +1142,30 @@
             });
         });
     </script>
+
+    <!-- Modal Logout -->
+    <div class="modal fade" id="mdl-logout" tabindex="-1" role="dialog" aria-labelledby="mdl-logoutLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mdl-logoutLabel">Konfirmasi Logout</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda yakin ingin keluar?
+                </div>
+                <div class="modal-footer d-flex">
+                    <!-- Form Logout -->
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Keluar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WV2F029BHZ&amp;cx=c&amp;_slc=1"></script>
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-K1MTZDKJT5&amp;cx=c&amp;_slc=1"></script>
